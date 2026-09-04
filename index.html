@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#173B2B" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root{
     --forest:#173B2B; --forest-deep:#0E2A1E;
@@ -41,7 +41,7 @@
   /* NAV */
   header.site-nav{position:sticky;top:0;z-index:50;background:rgba(255,246,232,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;max-width:1100px;margin:0 auto}
-  .nav-logo{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.25rem;color:var(--forest)}
+  .nav-logo{font-family:'Bagel Fat One',cursive;font-size:1.15rem;color:var(--forest)}
   .nav-logo span{color:var(--pink)}
   .nav-links{display:flex;gap:1.8rem;list-style:none;font-size:.9rem;font-weight:700}
   .nav-links a:hover{color:var(--pink-deep)}
@@ -150,7 +150,16 @@
             <path id="heroArc" d="M20,210 Q260,50 500,210"/>
           </defs>
           <path class="ring" d="M20,210 Q260,50 500,210" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-dasharray="1 9"/>
-          <text font-family="Baloo 2" font-weight="800" font-size="64" letter-spacing="1" fill="#fff">
+          <defs>
+            <linearGradient id="wordmarkGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#F6E2C8"/>
+            </linearGradient>
+          </defs>
+          <text font-family="'Bagel Fat One',cursive" font-size="66" fill="var(--forest-deep)" opacity=".35">
+            <textPath href="#heroArc" startOffset="50%" text-anchor="middle" dy="5">LiaCakes</textPath>
+          </text>
+          <text font-family="'Bagel Fat One',cursive" font-size="66" fill="url(#wordmarkGrad)">
             <textPath href="#heroArc" startOffset="50%" text-anchor="middle">LiaCakes</textPath>
           </text>
 
