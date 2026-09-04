@@ -1,0 +1,143 @@
+<title>LiaCakes — Opción C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#173B2B; --forest-deep:#0E2A1E;
+    --pink:#E8467D; --pink-deep:#B92A5C;
+    --mustard:#F0A93A; --mustard-deep:#D98A1C;
+    --cream:#FFF6E8; --paper:#FFFDF9;
+    --ink:#2B1A12; --ink-soft:#7A6555;
+    --line: rgba(43,26,18,.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#EDE6D9}
+  body{font-family:'Nunito',sans-serif;color:var(--ink)}
+  h1,h2,h3{font-family:'Baloo 2',sans-serif;font-weight:800;line-height:1.0;letter-spacing:.1px}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  .devicewrap{display:flex;flex-direction:column;align-items:center;padding:2rem 1rem 4rem;gap:1rem}
+  .tag{font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#8A7A63;background:#fff;border:1px solid var(--line);padding:.5rem 1rem;border-radius:50px}
+  .tag b{color:var(--pink-deep)}
+  .device{width:100%;max-width:430px;background:var(--paper);border-radius:34px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(15,20,15,.35),0 0 0 10px #fff, 0 0 0 11px var(--line)}
+
+  .wrap{padding:2rem 1.4rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.9rem;padding:.8rem 1.4rem;border-radius:14px;border:none}
+
+  /* HERO drenched diagonal */
+  .hero{position:relative;background:var(--pink);color:#fff;padding-bottom:1.6rem;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, var(--pink) 0 55%, var(--mustard) 55% 100%)}
+  .hero .in{position:relative;z-index:1}
+  .hero .kicker{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;background:rgba(255,255,255,.25);display:inline-block;padding:.3rem .7rem;border-radius:50px;margin-bottom:.8rem}
+  .hero h1{font-size:2.15rem}
+  .hero p{margin:.8rem 0 1.3rem;font-size:.92rem;max-width:26ch;color:#FFF0EC}
+  .chip-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
+  .chip{font-weight:800;font-size:.76rem;background:rgba(255,255,255,.92);color:var(--ink);padding:.5rem .9rem;border-radius:50px}
+  .hero .btn-main{background:var(--forest-deep);color:#fff;width:100%;justify-content:center;font-size:1rem;padding:1rem}
+
+  /* GALLERY masonry right under hero */
+  .gallery{background:var(--forest-deep);color:#fff;padding:2rem 1.4rem 2.4rem}
+  .gallery h2{font-size:1.35rem;margin-bottom:1rem}
+  .mason{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:76px;gap:.6rem}
+  .mtile{border-radius:14px;display:flex;align-items:flex-end;padding:.5rem;position:relative;overflow:hidden}
+  .mtile span{font-size:.66rem;font-weight:800;background:rgba(0,0,0,.32);padding:.18rem .5rem;border-radius:50px}
+  .mtile.tall{grid-row:span 2}
+
+  /* BENEFITS marquee */
+  .marquee-wrap{background:var(--mustard);padding:1.1rem 0;overflow:hidden}
+  .marquee{display:flex;gap:2.2rem;white-space:nowrap;animation:scroll 16s linear infinite;width:max-content}
+  @media (prefers-reduced-motion:reduce){.marquee{animation:none}}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .marquee span{font-family:'Baloo 2';font-weight:700;font-size:1rem;color:#3B2409;display:flex;align-items:center;gap:.5rem}
+  .marquee span::before{content:"●";color:#fff;font-size:.5rem}
+
+  /* STORY as pull-quote, lower */
+  .story{background:var(--cream);padding:2.2rem 1.4rem}
+  .story .card{background:var(--paper);border-radius:18px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start}
+  .story .av{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:var(--pink);display:flex;align-items:center;justify-content:center}
+  .story h3{font-size:1.05rem;margin-bottom:.3rem}
+  .story p{font-size:.85rem;color:var(--ink-soft)}
+  .story p strong{color:var(--ink)}
+
+  .banner{background:var(--forest);color:#fff;text-align:center;padding:2.2rem 1.4rem}
+  .banner h2{font-size:1.35rem;margin-bottom:.6rem}
+  .banner p{color:#CFE0D3;font-size:.85rem;max-width:28ch;margin:0 auto}
+
+  .cta-final{background:var(--pink-deep);color:#fff;text-align:center;padding:2.2rem 1.4rem}
+  .cta-final h2{font-size:1.5rem;margin-bottom:.6rem}
+  .cta-final p{color:#F6C9D6;font-size:.85rem;margin-bottom:1.2rem}
+  .cta-final .btns{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.3rem}
+  .btn-pink2{background:#fff;color:var(--pink-deep)}
+  .btn-out2{border:2px solid rgba(255,255,255,.5);color:#fff}
+  .foot-note{font-size:.7rem;color:#E9A9BE;border-top:1px solid rgba(255,255,255,.18);padding-top:.9rem}
+</style>
+
+<div class="devicewrap">
+  <span class="tag">OPCIÓN <b>C</b> · Catálogo al frente — bloques drenched, más denso, para quien ya sabe lo que quiere</span>
+  <div class="device">
+
+    <section class="hero">
+      <div class="wrap in">
+        <span class="kicker">LiaCakes</span>
+        <h1>Tu torta,<br>a tu manera.</h1>
+        <p>Diseños 100% personalizados, hechos a mano por Lia. Elige tu ocasión y cotiza al toque.</p>
+        <div class="chip-row">
+          <span class="chip">🎂 Cumpleaños</span>
+          <span class="chip">💍 Matrimonio</span>
+          <span class="chip">👑 XV años</span>
+          <span class="chip">🍼 Baby shower</span>
+        </div>
+        <a class="btn btn-main" href="#">Cotizar por WhatsApp →</a>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="wrap" style="padding:0">
+        <h2>¿Se te antojó?</h2>
+        <div class="mason">
+          <div class="mtile tall" style="background:#B92A5C"><span>Matrimonio</span></div>
+          <div class="mtile" style="background:#2C5A41"><span>Cumpleaños</span></div>
+          <div class="mtile" style="background:#D98A1C"><span>XV años</span></div>
+          <div class="mtile tall" style="background:#2C5A41"><span>Temáticas</span></div>
+          <div class="mtile" style="background:#B92A5C"><span>Cupcakes</span></div>
+          <div class="mtile" style="background:#D98A1C"><span>Baby shower</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-wrap">
+      <div class="marquee">
+        <span>100% hecho a mano</span><span>Ingredientes frescos</span><span>Diseño a tu medida</span><span>Sin moldes en serie</span>
+        <span>100% hecho a mano</span><span>Ingredientes frescos</span><span>Diseño a tu medida</span><span>Sin moldes en serie</span>
+      </div>
+    </div>
+
+    <section class="story">
+      <div class="card">
+        <div class="av"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#fff" stroke-width="1.6"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" stroke="#fff" stroke-width="1.6"/></svg></div>
+        <div>
+          <h3>Elsa Rosalía — para los amigos, Lia</h3>
+          <p>Desde niña decoraba todo lo dulce que encontraba. Hoy hace tortas <strong>una por una</strong>, con la misma curiosidad de siempre.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <h2>Cero fábrica.<br>Toda dedicación.</h2>
+      <p>Lia hace tu torta ella misma, de principio a fin — no una línea de producción.</p>
+    </section>
+
+    <section class="cta-final">
+      <h2>¿Tienes una fecha especial?</h2>
+      <p>Escríbele a Lia y cotiza tu torta hoy.</p>
+      <div class="btns">
+        <a class="btn btn-pink2" href="#">WhatsApp</a>
+        <a class="btn btn-out2" href="#">Instagram</a>
+      </div>
+      <p class="foot-note">LiaCakes · Pastelería artesanal · Hecho por Automalytics</p>
+    </section>
+
+  </div>
+</div>

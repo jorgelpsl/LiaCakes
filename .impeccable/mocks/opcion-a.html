@@ -1,0 +1,236 @@
+<title>LiaCakes — Opción A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#173B2B; --forest-deep:#0E2A1E;
+    --pink:#E8467D; --pink-deep:#B92A5C;
+    --mustard:#F0A93A; --mustard-deep:#D98A1C;
+    --cream:#FFF6E8; --paper:#FFFDF9;
+    --ink:#2B1A12; --ink-soft:#7A6555;
+    --line: rgba(43,26,18,.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#EDE6D9}
+  body{font-family:'Nunito',sans-serif;color:var(--ink)}
+  h1,h2,h3{font-family:'Baloo 2',sans-serif;font-weight:800;line-height:1.05;letter-spacing:.2px}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  .devicewrap{display:flex;flex-direction:column;align-items:center;padding:2rem 1rem 4rem;gap:1rem}
+  .tag{font-family:'Nunito',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#8A7A63;background:#fff;border:1px solid var(--line);padding:.5rem 1rem;border-radius:50px}
+  .tag b{color:var(--pink-deep)}
+  .device{width:100%;max-width:430px;background:var(--paper);border-radius:34px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(15,20,15,.35),0 0 0 10px #fff, 0 0 0 11px var(--line)}
+
+  section{position:relative}
+  .wrap{padding:2.2rem 1.4rem}
+  .eyebrow{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:.35rem .75rem;border-radius:50px;margin-bottom:.9rem}
+
+  .wave{display:block;width:100%;line-height:0;margin-top:-1px}
+  .wave svg{width:100%;height:auto;display:block}
+
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:.92rem;padding:.85rem 1.5rem;border-radius:50px;border:none;cursor:pointer}
+  .btn-pink{background:var(--pink);color:#fff;box-shadow:0 8px 20px -8px rgba(232,70,125,.7)}
+  .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+  .btn-dark{background:var(--forest-deep);color:#fff}
+
+  /* HERO */
+  .hero{background:var(--forest);color:#fff;padding-bottom:3.5rem}
+  .hero .eyebrow{background:rgba(255,255,255,.12);color:#F6E7B0}
+  .hero h1{font-size:2.3rem;color:#fff}
+  .hero h1 span{color:var(--mustard)}
+  .hero p{margin:1rem 0 1.6rem;color:#CFE0D3;font-size:.98rem;max-width:32ch}
+  .hero-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2.2rem}
+  .hero-illust{display:flex;justify-content:center;padding:.5rem 0 1rem}
+  .hero-stats{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.15);padding-top:1.1rem}
+  .hero-stats div{text-align:center}
+  .hero-stats b{display:block;font-family:'Baloo 2';font-size:1.3rem;color:var(--mustard)}
+  .hero-stats span{font-size:.7rem;color:#B9CBBD}
+
+  /* STORY */
+  .story{background:var(--cream);text-align:center;padding-bottom:3.5rem}
+  .story .eyebrow{background:#F3E0C8;color:var(--mustard-deep)}
+  .story h2{font-size:1.7rem;margin-bottom:.6rem}
+  .story-ring{position:relative;width:220px;height:220px;margin:1.6rem auto 1.2rem}
+  .story-ring svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+  @media (prefers-reduced-motion:reduce){.story-ring svg{animation:none}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .story-ring .cake{position:absolute;inset:34px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px -10px rgba(43,26,18,.25)}
+  .story p{color:var(--ink-soft);font-size:.94rem;max-width:34ch;margin:0 auto}
+  .story strong{color:var(--ink)}
+
+  /* BEST SELLERS */
+  .sellers{background:var(--mustard);padding-bottom:3.2rem}
+  .sellers .eyebrow{background:rgba(255,255,255,.35);color:#6B3E0A}
+  .sellers h2{font-size:1.6rem;color:#3B2409;margin-bottom:1.4rem}
+  .seller-row{display:flex;gap:1.1rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:none}
+  .seller-row::-webkit-scrollbar{display:none}
+  .seller{flex:0 0 auto;width:88px;text-align:center}
+  .seller .badge{width:76px;height:76px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;margin:0 auto .55rem;box-shadow:0 10px 18px -8px rgba(59,36,9,.35)}
+  .seller span{font-size:.74rem;font-weight:800;color:#3B2409}
+
+  /* BENEFITS */
+  .benefits{background:var(--paper);padding-bottom:3.4rem}
+  .benefits .eyebrow{background:#F3E0C8;color:var(--mustard-deep)}
+  .benefits h2{font-size:1.6rem;margin-bottom:1.4rem}
+  .benefit-grid{display:grid;gap:.9rem}
+  .benefit{display:flex;gap:.9rem;align-items:flex-start;background:var(--cream);border-radius:18px;padding:1.1rem}
+  .benefit .ic{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--pink);display:flex;align-items:center;justify-content:center}
+  .benefit h4{font-family:'Nunito';font-weight:800;font-size:.95rem;margin-bottom:.2rem}
+  .benefit p{font-size:.82rem;color:var(--ink-soft)}
+
+  /* GALLERY */
+  .gallery{background:var(--forest-deep);color:#fff;padding-bottom:3.4rem}
+  .gallery .eyebrow{background:rgba(255,255,255,.12);color:var(--mustard)}
+  .gallery h2{font-size:1.7rem;margin-bottom:1.3rem}
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+  .gal-tile{aspect-ratio:1/1;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;position:relative;overflow:hidden}
+  .gal-tile span{font-size:.72rem;font-weight:800;color:#fff;background:rgba(0,0,0,.28);padding:.25rem .6rem;border-radius:50px}
+
+  /* BANNER */
+  .banner{background:var(--pink);color:#fff;text-align:center;padding-bottom:3.2rem}
+  .banner h2{font-size:1.55rem;margin-bottom:.7rem}
+  .banner p{color:#FBDCE7;font-size:.92rem;max-width:32ch;margin:0 auto 1.4rem}
+
+  /* CTA FOOTER */
+  .cta-final{background:var(--pink-deep);color:#fff;text-align:center}
+  .cta-final h2{font-size:1.7rem;margin-bottom:.6rem}
+  .cta-final p{color:#F6C9D6;font-size:.9rem;margin-bottom:1.4rem}
+  .cta-final .btns{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
+  .foot-note{font-size:.72rem;color:#E9A9BE;border-top:1px solid rgba(255,255,255,.18);padding-top:1rem}
+
+  .sprinkle{position:absolute;opacity:.5}
+</style>
+
+<div class="devicewrap">
+  <span class="tag">OPCIÓN <b>A</b> · Fiel a la referencia — mismo orden y ritmo de bloques que la imagen que compartiste</span>
+  <div class="device">
+
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Pastelería artesanal</span>
+        <h1>Descubre tu<br>torta <span>soñada</span></h1>
+        <p>Cada torta de LiaCakes nace de una idea tuya y de las manos de Lia. Sin líneas de producción, sin atajos.</p>
+        <div class="hero-actions">
+          <a class="btn btn-pink" href="#">Cotizar por WhatsApp</a>
+          <a class="btn btn-outline" href="#">Ver diseños</a>
+        </div>
+        <div class="hero-illust">
+          <svg width="200" height="170" viewBox="0 0 200 170" fill="none">
+            <ellipse cx="100" cy="150" rx="78" ry="10" fill="#0A2016"/>
+            <rect x="34" y="96" width="132" height="54" rx="12" fill="#F6D9E2"/>
+            <rect x="34" y="94" width="132" height="12" rx="6" fill="#fff" opacity=".7"/>
+            <rect x="54" y="54" width="92" height="48" rx="12" fill="#FBEEE0"/>
+            <rect x="54" y="52" width="92" height="10" rx="5" fill="#fff" opacity=".7"/>
+            <circle cx="72" cy="82" r="5" fill="var(--mustard)"/>
+            <circle cx="100" cy="82" r="5" fill="var(--pink)"/>
+            <circle cx="128" cy="82" r="5" fill="var(--mustard)"/>
+            <rect x="97" y="20" width="6" height="30" rx="3" fill="var(--mustard)"/>
+            <path d="M100 6c6 6 6 12 0 18-6-6-6-12 0-18Z" fill="var(--pink)"/>
+            <circle class="sprinkle" cx="30" cy="40" r="4" fill="var(--mustard)"/>
+            <circle class="sprinkle" cx="172" cy="30" r="5" fill="var(--pink)"/>
+            <circle class="sprinkle" cx="180" cy="90" r="3" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="hero-stats">
+          <div><b>100%</b><span>Hecho a mano</span></div>
+          <div><b>1</b><span>Pastelera dedicada</span></div>
+          <div><b>0</b><span>Atajos</span></div>
+        </div>
+      </div>
+      <div class="wave"><svg viewBox="0 0 430 40" preserveAspectRatio="none"><path d="M0 20 C 60 40 110 0 170 18 C 230 36 280 4 340 16 C 380 24 410 12 430 20 L430 40 L0 40 Z" fill="#FFF6E8"/></svg></div>
+    </section>
+
+    <section class="story">
+      <div class="wrap">
+        <span class="eyebrow">El nombre tiene historia</span>
+        <h2>Elsa Rosalía.<br>Para los amigos, <em>Lia</em>.</h2>
+        <div class="story-ring">
+          <svg viewBox="0 0 220 220"><defs><path id="ringpath" d="M110,110 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+            <text font-family="Nunito" font-weight="800" font-size="11.5" letter-spacing="2" fill="#C99A57">
+              <textPath href="#ringpath" startOffset="0%">HECHA CON AMOR · UNA POR UNA · HECHA CON AMOR · UNA POR UNA ·</textPath>
+            </text>
+          </svg>
+          <div class="cake">
+            <svg width="86" height="86" viewBox="0 0 86 86"><circle cx="43" cy="43" r="43" fill="#F6D9E2"/><path d="M20 46h46v18a6 6 0 0 1-6 6H26a6 6 0 0 1-6-6V46Z" fill="#fff"/><rect x="24" y="34" width="38" height="14" rx="7" fill="#E8467D"/></svg>
+          </div>
+        </div>
+        <p>Desde niña, <strong>Lia</strong> decoraba cualquier cosa dulce en la cocina de su abuela. Hoy convierte esa curiosidad en tortas que sus clientes recuerdan — hechas por ella, de principio a fin.</p>
+      </div>
+      <div class="wave"><svg viewBox="0 0 430 40" preserveAspectRatio="none"><path d="M0 20 C 60 40 110 0 170 18 C 230 36 280 4 340 16 C 380 24 410 12 430 20 L430 40 L0 40 Z" fill="var(--mustard)"/></svg></div>
+    </section>
+
+    <section class="sellers">
+      <div class="wrap">
+        <span class="eyebrow">Lo más pedido</span>
+        <h2>Tortas por ocasión</h2>
+        <div class="seller-row">
+          <div class="seller"><div class="badge"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M8 8c0-2 1.8-4 4-4s4 2 4 4M4 21l1-9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3l1 9H4Z" stroke="#E8467D" stroke-width="1.6"/></svg></div><span>Cumpleaños</span></div>
+          <div class="seller"><div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="5" stroke="#E8467D" stroke-width="1.6"/><circle cx="15" cy="12" r="5" stroke="#F0A93A" stroke-width="1.6"/></svg></div><span>Matrimonio</span></div>
+          <div class="seller"><div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3 3 8l9 5 9-5-9-5Z" stroke="#E8467D" stroke-width="1.6"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" stroke="#E8467D" stroke-width="1.6"/></svg></div><span>XV años</span></div>
+          <div class="seller"><div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 4c-3 3-7 6-7 10a7 7 0 0 0 14 0c0-4-4-7-7-10Z" stroke="#E8467D" stroke-width="1.6"/></svg></div><span>Baby shower</span></div>
+          <div class="seller"><div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="4" y="8" width="16" height="11" rx="2" stroke="#E8467D" stroke-width="1.6"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="#E8467D" stroke-width="1.6"/></svg></div><span>Corporativo</span></div>
+        </div>
+      </div>
+      <div class="wave"><svg viewBox="0 0 430 40" preserveAspectRatio="none"><path d="M0 20 C 60 40 110 0 170 18 C 230 36 280 4 340 16 C 380 24 410 12 430 20 L430 40 L0 40 Z" fill="#FFFDF9"/></svg></div>
+    </section>
+
+    <section class="benefits">
+      <div class="wrap">
+        <span class="eyebrow">Por qué LiaCakes</span>
+        <h2>Cada torta, con cuidado real</h2>
+        <div class="benefit-grid">
+          <div class="benefit"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></div><div><h4>100% hecho a mano</h4><p>Se arma y decora a mano, sin moldes en serie.</p></div></div>
+          <div class="benefit"><div class="ic" style="background:var(--mustard)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v10M7 8l5 5 5-5" stroke="#3B2409" stroke-width="2.2" stroke-linecap="round"/></svg></div><div><h4>Ingredientes frescos</h4><p>Sin mezclas preparadas ni conservantes de más.</p></div></div>
+          <div class="benefit"><div class="ic" style="background:var(--forest)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4Z" stroke="#fff" stroke-width="1.8"/></svg></div><div><h4>Diseño a tu medida</h4><p>Cuéntale tu idea a Lia y la hace realidad.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="wrap">
+        <span class="eyebrow">Inspírate</span>
+        <h2>¿Se te antojó?</h2>
+        <div class="gal-grid">
+          <div class="gal-tile" style="background:#2C5A41"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M4 14h16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4Z" fill="#F6D9E2"/><rect x="4" y="10" width="16" height="4" fill="#fff"/></svg><span>Cumpleaños</span></div>
+          <div class="gal-tile" style="background:#B92A5C"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="13" r="4" stroke="#fff" stroke-width="1.6"/><circle cx="15" cy="13" r="4" stroke="#F0A93A" stroke-width="1.6"/></svg><span>Matrimonio</span></div>
+          <div class="gal-tile" style="background:#D98A1C"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 4c6 4 8 7 8 10a8 8 0 0 1-16 0c0-3 2-6 8-10Z" fill="#fff"/></svg><span>Temáticas</span></div>
+          <div class="gal-tile" style="background:#2C5A41"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M9 20V11a3 3 0 0 1 6 0v9" stroke="#fff" stroke-width="1.6"/><path d="M7 11h10v-2a5 5 0 0 0-10 0v2Z" fill="#F6D9E2"/></svg><span>Cupcakes</span></div>
+          <div class="gal-tile" style="background:#B92A5C"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><rect x="5" y="9" width="14" height="10" rx="2" fill="#fff"/><rect x="5" y="9" width="14" height="3" fill="#F0A93A"/></svg><span>Tortas de piso</span></div>
+          <div class="gal-tile" style="background:#D98A1C"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="6" fill="#fff"/><circle cx="12" cy="12" r="2" fill="#E8467D"/></svg><span>Postres</span></div>
+        </div>
+      </div>
+      <div class="wave"><svg viewBox="0 0 430 40" preserveAspectRatio="none"><path d="M0 20 C 60 40 110 0 170 18 C 230 36 280 4 340 16 C 380 24 410 12 430 20 L430 40 L0 40 Z" fill="var(--pink)"/></svg></div>
+    </section>
+
+    <section class="banner">
+      <div class="wrap">
+        <svg width="150" height="94" viewBox="0 0 150 94" style="margin:0 auto 1.2rem">
+          <ellipse cx="75" cy="88" rx="60" ry="6" fill="rgba(0,0,0,.12)"/>
+          <circle cx="45" cy="46" r="30" fill="#3B2409"/>
+          <circle cx="45" cy="40" r="18" fill="#F3C7A0"/>
+          <path d="M30 34a15 15 0 0 1 30 0" fill="#5B3A22"/>
+          <rect x="90" y="40" width="46" height="30" rx="8" fill="#fff"/>
+          <rect x="96" y="30" width="34" height="14" rx="7" fill="#F6D9E2"/>
+        </svg>
+        <h2>Hecha una por una,<br>con tiempo y cariño.</h2>
+        <p>Lia no tiene una fábrica de tortas — tiene una cocina, una libreta de pedidos y muchas ganas de que tu celebración sea especial.</p>
+      </div>
+      <div class="wave"><svg viewBox="0 0 430 40" preserveAspectRatio="none"><path d="M0 20 C 60 40 110 0 170 18 C 230 36 280 4 340 16 C 380 24 410 12 430 20 L430 40 L0 40 Z" fill="var(--pink-deep)"/></svg></div>
+    </section>
+
+    <section class="cta-final">
+      <div class="wrap">
+        <h2>¿Tienes una fecha especial?</h2>
+        <p>Escríbele a Lia y cotiza tu torta hoy.</p>
+        <div class="btns">
+          <a class="btn btn-pink" href="#" style="background:#fff;color:var(--pink-deep)">WhatsApp</a>
+          <a class="btn btn-outline" href="#">Instagram</a>
+        </div>
+        <p class="foot-note">LiaCakes · Pastelería artesanal · Hecho por Automalytics</p>
+      </div>
+    </section>
+
+  </div>
+</div>
