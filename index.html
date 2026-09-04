@@ -50,7 +50,7 @@
   /* HERO */
   .hero{background:var(--forest);color:#fff;padding:3.2rem 0 3.6rem;position:relative;overflow:hidden;text-align:center}
   .hero .eyebrow{background:rgba(255,255,255,.12);color:#F6E7B0}
-  .hero-emblem{position:relative;width:min(460px,88%);margin:.6rem auto .2rem}
+  .hero-emblem{position:relative;width:min(600px,94%);margin:.4rem auto -.2rem}
   .hero-emblem svg{width:100%;height:auto;animation:floatCake 5s ease-in-out infinite}
   .hero-emblem .ring{animation:spinSlow 40s linear infinite}
   @keyframes floatCake{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -145,42 +145,40 @@
       <span class="eyebrow">Pastelería artesanal</span>
 
       <div class="hero-emblem">
-        <svg viewBox="0 0 520 440" fill="none">
+        <svg viewBox="0 0 560 480" fill="none">
           <defs>
-            <path id="heroArc" d="M20,210 Q260,50 500,210"/>
-          </defs>
-          <path class="ring" d="M20,210 Q260,50 500,210" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-dasharray="1 9"/>
-          <defs>
+            <path id="heroArc" d="M15,235 Q280,35 545,235"/>
             <linearGradient id="wordmarkGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#FFFFFF"/>
               <stop offset="100%" stop-color="#F6E2C8"/>
             </linearGradient>
           </defs>
-          <text font-family="'Bagel Fat One',cursive" font-size="66" fill="var(--forest-deep)" opacity=".35">
-            <textPath href="#heroArc" startOffset="50%" text-anchor="middle" dy="5">LiaCakes</textPath>
+          <path class="ring" d="M15,235 Q280,35 545,235" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-dasharray="1 9"/>
+          <text font-family="'Bagel Fat One',cursive" font-size="92" fill="var(--forest-deep)" opacity=".35">
+            <textPath href="#heroArc" startOffset="50%" text-anchor="middle" dy="6">LiaCakes</textPath>
           </text>
-          <text font-family="'Bagel Fat One',cursive" font-size="66" fill="url(#wordmarkGrad)">
+          <text font-family="'Bagel Fat One',cursive" font-size="92" fill="url(#wordmarkGrad)">
             <textPath href="#heroArc" startOffset="50%" text-anchor="middle">LiaCakes</textPath>
           </text>
 
           <!-- torta -->
-          <path d="M260,192c9,9 9,19 0,29-9,-9-9,-19 0,-29Z" fill="#E8467D"/>
-          <rect x="254" y="224" width="12" height="40" rx="6" fill="#F0A93A"/>
-          <rect x="150" y="264" width="220" height="64" rx="16" fill="#FBEEE0"/>
-          <rect x="150" y="260" width="220" height="14" rx="7" fill="#fff" opacity=".75"/>
-          <circle cx="190" cy="296" r="8" fill="#F0A93A"/>
-          <circle cx="260" cy="296" r="8" fill="#E8467D"/>
-          <circle cx="330" cy="296" r="8" fill="#F0A93A"/>
-          <rect x="110" y="328" width="300" height="70" rx="18" fill="#F6D9E2"/>
-          <rect x="110" y="324" width="300" height="16" rx="8" fill="#fff" opacity=".75"/>
-          <rect x="92" y="352" width="14" height="46" rx="6" fill="#0E2A1E" opacity=".35"/>
-          <rect x="414" y="352" width="14" height="46" rx="6" fill="#0E2A1E" opacity=".35"/>
-          <ellipse cx="260" cy="406" rx="150" ry="15" fill="#0A2016"/>
+          <path d="M280,206c10,10 10,21 0,31-10,-10-10,-21 0,-31Z" fill="#E8467D"/>
+          <rect x="273" y="240" width="14" height="44" rx="7" fill="#F0A93A"/>
+          <rect x="160" y="284" width="240" height="70" rx="17" fill="#FBEEE0"/>
+          <rect x="160" y="280" width="240" height="15" rx="7" fill="#fff" opacity=".75"/>
+          <circle cx="205" cy="320" r="9" fill="#F0A93A"/>
+          <circle cx="280" cy="320" r="9" fill="#E8467D"/>
+          <circle cx="355" cy="320" r="9" fill="#F0A93A"/>
+          <rect x="115" y="352" width="330" height="76" rx="19" fill="#F6D9E2"/>
+          <rect x="115" y="348" width="330" height="17" rx="8" fill="#fff" opacity=".75"/>
+          <rect x="96" y="380" width="15" height="50" rx="7" fill="#0E2A1E" opacity=".35"/>
+          <rect x="449" y="380" width="15" height="50" rx="7" fill="#0E2A1E" opacity=".35"/>
+          <ellipse cx="280" cy="440" rx="165" ry="16" fill="#0A2016"/>
 
-          <circle class="sprinkle" cx="50" cy="150" r="6" fill="#F0A93A"/>
-          <circle class="sprinkle" cx="470" cy="140" r="7" fill="#E8467D"/>
-          <circle class="sprinkle" cx="20" cy="270" r="4" fill="#fff"/>
-          <circle class="sprinkle" cx="500" cy="280" r="5" fill="#fff"/>
+          <circle class="sprinkle" cx="45" cy="160" r="7" fill="#F0A93A"/>
+          <circle class="sprinkle" cx="515" cy="150" r="8" fill="#E8467D"/>
+          <circle class="sprinkle" cx="15" cy="290" r="4" fill="#fff"/>
+          <circle class="sprinkle" cx="545" cy="300" r="5" fill="#fff"/>
         </svg>
       </div>
 
