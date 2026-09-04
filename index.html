@@ -48,25 +48,20 @@
   @media (max-width:840px){.nav-links{display:none}}
 
   /* HERO */
-  .hero{background:var(--forest);color:#fff;padding:3.4rem 0 4rem;position:relative;overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.5rem;align-items:center}
-  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;text-align:center}}
+  .hero{background:var(--forest);color:#fff;padding:3.2rem 0 3.6rem;position:relative;overflow:hidden;text-align:center}
   .hero .eyebrow{background:rgba(255,255,255,.12);color:#F6E7B0}
-  .hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem)}
-  .hero h1 span{color:var(--mustard)}
-  .hero p.lead{margin:1.1rem 0 1.7rem;color:#CFE0D3;font-size:1.05rem;max-width:36ch}
-  @media (max-width:860px){.hero p.lead{margin-inline:auto}}
-  .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.2rem}
-  @media (max-width:860px){.hero-actions{justify-content:center}}
-  .hero-stats{display:flex;gap:2.4rem;border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem}
-  @media (max-width:860px){.hero-stats{justify-content:center}}
+  .hero-emblem{position:relative;width:min(460px,88%);margin:.6rem auto .2rem}
+  .hero-emblem svg{width:100%;height:auto;animation:floatCake 5s ease-in-out infinite}
+  .hero-emblem .ring{animation:spinSlow 40s linear infinite}
+  @keyframes floatCake{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes spinSlow{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.hero-emblem svg,.hero-emblem .ring{animation:none}}
+  .hero p.lead{margin:0 auto 1.7rem;color:#CFE0D3;font-size:1.05rem;max-width:38ch}
+  .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.2rem;justify-content:center}
+  .hero-stats{display:flex;gap:2.4rem;border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem;justify-content:center}
   .hero-stats div{text-align:center}
   .hero-stats b{display:block;font-family:'Baloo 2';font-size:1.5rem;color:var(--mustard)}
   .hero-stats span{font-size:.72rem;color:#B9CBBD}
-  .hero-illust{display:flex;justify-content:center;padding:1rem 0}
-  .hero-illust svg{width:min(320px,80%);height:auto;animation:floatCake 5s ease-in-out infinite}
-  @keyframes floatCake{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-  @media (prefers-reduced-motion:reduce){.hero-illust svg{animation:none}}
 
   /* STORY */
   .story{background:var(--cream);text-align:center;padding:4rem 0}
@@ -146,37 +141,49 @@
   </header>
 
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">Pastelería artesanal</span>
-        <h1>Descubre tu<br>torta <span>soñada</span></h1>
-        <p class="lead">Cada torta de LiaCakes nace de una idea tuya y de las manos de Lia. Sin líneas de producción, sin atajos — solo dedicación real.</p>
-        <div class="hero-actions">
-          <a class="btn btn-pink" href="https://wa.me/56900000000" target="_blank" rel="noopener">Cotizar por WhatsApp →</a>
-          <a class="btn btn-outline" href="#ocasiones">Ver diseños</a>
-        </div>
-        <div class="hero-stats">
-          <div><b>100%</b><span>Hecho a mano</span></div>
-          <div><b>1</b><span>Pastelera dedicada</span></div>
-          <div><b>0</b><span>Atajos</span></div>
-        </div>
-      </div>
-      <div class="hero-illust">
-        <svg viewBox="0 0 200 170" fill="none">
-          <ellipse cx="100" cy="150" rx="78" ry="10" fill="#0A2016"/>
-          <rect x="34" y="96" width="132" height="54" rx="12" fill="#F6D9E2"/>
-          <rect x="34" y="94" width="132" height="12" rx="6" fill="#fff" opacity=".7"/>
-          <rect x="54" y="54" width="92" height="48" rx="12" fill="#FBEEE0"/>
-          <rect x="54" y="52" width="92" height="10" rx="5" fill="#fff" opacity=".7"/>
-          <circle cx="72" cy="82" r="5" fill="#F0A93A"/>
-          <circle cx="100" cy="82" r="5" fill="#E8467D"/>
-          <circle cx="128" cy="82" r="5" fill="#F0A93A"/>
-          <rect x="97" y="20" width="6" height="30" rx="3" fill="#F0A93A"/>
-          <path d="M100 6c6 6 6 12 0 18-6-6-6-12 0-18Z" fill="#E8467D"/>
-          <circle class="sprinkle" cx="30" cy="40" r="4" fill="#F0A93A"/>
-          <circle class="sprinkle" cx="172" cy="30" r="5" fill="#E8467D"/>
-          <circle class="sprinkle" cx="180" cy="90" r="3" fill="#fff"/>
+    <div class="wrap">
+      <span class="eyebrow">Pastelería artesanal</span>
+
+      <div class="hero-emblem">
+        <svg viewBox="0 0 520 440" fill="none">
+          <defs>
+            <path id="heroArc" d="M20,210 Q260,50 500,210"/>
+          </defs>
+          <path class="ring" d="M20,210 Q260,50 500,210" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1" stroke-dasharray="1 9"/>
+          <text font-family="Baloo 2" font-weight="800" font-size="64" letter-spacing="1" fill="#fff">
+            <textPath href="#heroArc" startOffset="50%" text-anchor="middle">LiaCakes</textPath>
+          </text>
+
+          <!-- torta -->
+          <path d="M260,192c9,9 9,19 0,29-9,-9-9,-19 0,-29Z" fill="#E8467D"/>
+          <rect x="254" y="224" width="12" height="40" rx="6" fill="#F0A93A"/>
+          <rect x="150" y="264" width="220" height="64" rx="16" fill="#FBEEE0"/>
+          <rect x="150" y="260" width="220" height="14" rx="7" fill="#fff" opacity=".75"/>
+          <circle cx="190" cy="296" r="8" fill="#F0A93A"/>
+          <circle cx="260" cy="296" r="8" fill="#E8467D"/>
+          <circle cx="330" cy="296" r="8" fill="#F0A93A"/>
+          <rect x="110" y="328" width="300" height="70" rx="18" fill="#F6D9E2"/>
+          <rect x="110" y="324" width="300" height="16" rx="8" fill="#fff" opacity=".75"/>
+          <rect x="92" y="352" width="14" height="46" rx="6" fill="#0E2A1E" opacity=".35"/>
+          <rect x="414" y="352" width="14" height="46" rx="6" fill="#0E2A1E" opacity=".35"/>
+          <ellipse cx="260" cy="406" rx="150" ry="15" fill="#0A2016"/>
+
+          <circle class="sprinkle" cx="50" cy="150" r="6" fill="#F0A93A"/>
+          <circle class="sprinkle" cx="470" cy="140" r="7" fill="#E8467D"/>
+          <circle class="sprinkle" cx="20" cy="270" r="4" fill="#fff"/>
+          <circle class="sprinkle" cx="500" cy="280" r="5" fill="#fff"/>
         </svg>
+      </div>
+
+      <p class="lead">Cada torta nace de una idea tuya y de las manos de Lia. Sin líneas de producción, sin atajos — solo dedicación real.</p>
+      <div class="hero-actions">
+        <a class="btn btn-pink" href="https://wa.me/56900000000" target="_blank" rel="noopener">Cotizar por WhatsApp →</a>
+        <a class="btn btn-outline" href="#ocasiones">Ver diseños</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>100%</b><span>Hecho a mano</span></div>
+        <div><b>1</b><span>Pastelera dedicada</span></div>
+        <div><b>0</b><span>Atajos</span></div>
       </div>
     </div>
     <div class="wave"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 C 200 60 400 0 600 26 C 800 52 1000 6 1200 24 C 1320 34 1400 18 1440 30 L1440 60 L0 60 Z" fill="#FFF6E8"/></svg></div>
